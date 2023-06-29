@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/fin_status"
+        android:id="@+id/finStatus"
+        android:icon="@drawable/fin_stat4"/>
+
+    <item android:title="@string/reports"
+        android:id="@+id/reports"
+        android:icon="@drawable/report3"/>
+
+</menu>

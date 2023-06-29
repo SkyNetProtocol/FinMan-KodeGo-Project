@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="loginPage">#50ffffff</color>
+    <color name="background">#ffcc66</color>
+    <color name="lightYellow">#ffff66</color>
+    <color name="lightBlue">#99ccff</color>
+    <color name="navyBlue">#006699</color>
+    <color name="darkNavyBlue">#004466</color>
+
+    <color name="primaryContainer_90">#ccffff</color>
+    <color name="primaryContainer_50">#00ffff</color>
+    <color name="primaryContainer_40">#00cccc</color>
+    <color name="primaryContainerMainColor_30">#009999</color>
+    <color name="primaryContainer_10">#003333</color>
+
+    <color name="primaryContainer2_90">#F8B0A8</color>
+    <color name="primaryContainer2_50">#EE624F</color>
+    <color name="primaryContainer2_40">#EB4F39</color>
+    <color name="primaryContainerMainColor2_30">#E52A0D</color>
+    <color name="primaryContainer2_10">#A01909</color>
+
+    <color name="sun">#ff944d</color>
+    <color name="sun_2">#ffb366</color>
+
+    <color name="sample">#FFD499</color>
+    <color name="sample2">#007A7A</color>
+
+    <color name="option1_1">#FFD8B5</color>
+    <color name="option1_2">#FFA500</color>
+    <color name="option1_3">#FFEFDB</color>
+
+    <color name="option2_1">#FFA500</color>
+    <color name="option2_2">#FFC135</color>
+    <color name="option2_3">#FF4500</color>
+
+    <color name="option3_1">#FFA500</color>
+    <color name="option3_2">#FFB000</color>
+    <color name="option3_3">#FF6347</color>
+
+    <color name="option4_1">#FFA500</color>
+    <color name="option4_2">#FFCC80</color>
+    <color name="option4_3">#B7410E</color>
+</resources>
