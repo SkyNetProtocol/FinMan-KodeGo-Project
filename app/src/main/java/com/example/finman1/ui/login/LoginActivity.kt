@@ -3,6 +3,7 @@ package com.example.finman1.ui.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import com.example.finman1.ui.home.HomeActivity
 import com.example.finman1.ui.signup.SignupActivity
@@ -34,4 +35,5 @@ class LoginActivity : AppCompatActivity() {
             startActivity(buttonSignUp)
         }
     }
+
 }

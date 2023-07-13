@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.loadingscreen.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/splash"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:visibility="visible"
+        app:lottie_loop="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/animation_ljyc2b0r" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

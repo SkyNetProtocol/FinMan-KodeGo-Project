@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="loginStyle">
+    <style name="loginStyle" parent="Theme.FinMan1">
         <item name="android:textSize">20sp</item>
         <item name="android:layout_width">300dp</item>
         <item name="android:layout_height">48dp</item>
@@ -24,11 +24,12 @@
         <item name="android:background">@color/white</item>
     </style>
 
-    <style name="loginStyle2">
+    <style name="loginStyle2" parent="Theme.FinMan1">
         <item name="android:textSize">14sp</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">48dp</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:gravity">center</item>
     </style>
+
 </resources>
