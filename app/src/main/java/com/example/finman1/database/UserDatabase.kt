@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase
 @Database(entities = [FinManDataClass::class], version = 1, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {
 
-    abstract fun getItemDao(): FinManDao
+    abstract fun userDao(): FinManDao
 
     companion object{
 

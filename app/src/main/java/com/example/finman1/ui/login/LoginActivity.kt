@@ -36,4 +36,18 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun isValidCredentials(username: String, password: String): Boolean {
+        return username == "demo" && password == "password"
+    }
 }
+
+//private fun buttonAction(){
+//    binding.btnLogin.setOnClickListener {
+//        val buttonLogin = Intent(this, HomeActivity::class.java)
+//        startActivity(buttonLogin)
+//    }
+//    binding.btnSignUp.setOnClickListener {
+//        val buttonSignUp = Intent(this, SignupActivity::class.java)
+//        startActivity(buttonSignUp)
+//    }
+//}
