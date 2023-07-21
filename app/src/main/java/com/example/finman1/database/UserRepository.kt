@@ -12,11 +12,11 @@ class UserRepository(private val userDao:FinManDao) {
         userDao.updateUser(user)
     }
 
-//    suspend fun getSpecific(name: String): List<FinManDataClass> {
-//        return coroutineScope {
-//            userDao.getSpecificUser(name)
-//        }
-//    }
+    suspend fun getSpecific(name: String): List<FinManDataClass> {
+        return coroutineScope {
+            userDao.getUserByMailAndPass(name)
+        }
+    }
 
     suspend fun addUserToDatabase(user: FinManDataClass) {
         return coroutineScope {

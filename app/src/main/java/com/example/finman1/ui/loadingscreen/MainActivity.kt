@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({
             goToLogin()
-        }, 3000)
+        }, 4000)
     }
 
     fun goToLogin(){

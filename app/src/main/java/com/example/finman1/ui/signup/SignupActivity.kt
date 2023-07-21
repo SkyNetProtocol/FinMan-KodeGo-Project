@@ -1,11 +1,14 @@
 package com.example.finman1.ui.signup
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.finman1.application.FinManClass
 import com.example.finman1.database.FinManDataClass
 import com.example.finman1.databinding.ActivitySignupBinding
+import com.example.finman1.ui.home.HomeActivity
+import com.example.finman1.ui.login.LoginActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,9 +24,15 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        attachActions()
+
     }
+
+
+
     private fun attachActions(){
         binding.registerSignUp.setOnClickListener { addUser() }
+        binding.alreadyHadAnAccount.setOnClickListener { btnActionAlreadyHadAnAccount() }
     }
 
     private fun addUser(){
@@ -34,7 +43,6 @@ class SignupActivity : AppCompatActivity() {
         val newConfirmPassword = binding.SignUpConfirmPassword.text.toString()
 
         val userToAdd = FinManDataClass(0, newFirstName, newLastName, newEmail, newPassword, newConfirmPassword)
-//        itemCount++
         val newScope = CoroutineScope(Dispatchers.IO).launch{
             userRepository.addUserToDatabase(userToAdd)
             Log.e("DB","___ added ___ " )
@@ -44,6 +52,11 @@ class SignupActivity : AppCompatActivity() {
         binding.email.text!!.clear()
         binding.SignUpPassword.text!!.clear()
         binding.SignUpConfirmPassword.text!!.clear()
+    }
+
+    private fun btnActionAlreadyHadAnAccount(){
+            val buttonLogin = Intent(this, LoginActivity::class.java)
+            startActivity(buttonLogin)
     }
 
 }
