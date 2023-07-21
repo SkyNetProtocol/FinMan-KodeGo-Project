@@ -18,7 +18,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -50,11 +49,11 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
 
     def lifecycle_version = "2.6.0-alpha01"
-    // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    // ViewModel utilities for Compose
-    implementation"androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-    // LiveData
+//    // ViewModel
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+//    // ViewModel utilities for Compose
+//    implementation"androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+//    // LiveData
 
     // realm
     implementation 'io.realm.kotlin:library-base:1.8.0'
@@ -73,14 +72,13 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:2.5.2"
 
     // Lifecycle components
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+//    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+//    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
+//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
 
     // Kotlin components
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.21"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+//    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
+//    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
 
 
 }

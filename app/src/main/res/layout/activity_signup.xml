@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_two"
+    android:background="@color/lightGray"
     tools:context=".ui.signup.SignupActivity">
+
+    <FrameLayout
+        android:id="@+id/frame_1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gradient_one"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/SignUpPassword"
@@ -26,12 +35,13 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
+        android:layout_marginTop="84dp"
         android:background="@color/white"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignUpPassword" />
 
@@ -39,7 +49,7 @@
         android:id="@+id/registerSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:background="@color/option3_1"
         android:text="@string/register"
         android:textColor="@color/black"
@@ -56,22 +66,24 @@
         android:text="@string/already_had_an_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerSignUp"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.33" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/firstName"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
+        android:layout_marginTop="76dp"
         android:background="@color/white"
         android:hint="@string/first_name"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/frame_1" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/lastName"

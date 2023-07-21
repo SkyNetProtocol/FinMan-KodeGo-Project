@@ -12,6 +12,8 @@
     <color name="lightBlue">#99ccff</color>
     <color name="navyBlue">#006699</color>
     <color name="darkNavyBlue">#004466</color>
+    <color name="lightGray">#D3D3D3</color>
+
 
     <color name="primaryContainer_90">#ccffff</color>
     <color name="primaryContainer_50">#00ffff</color>

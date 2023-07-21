@@ -9,12 +9,17 @@ interface FinManDao {
     suspend fun addUser(finManDataClass: FinManDataClass)
 
     @Query("SELECT * FROM user_table ORDER BY id DESC")
-    suspend fun getAllItem(): List<FinManDataClass>
+    suspend fun getAllUser(): List<FinManDataClass>
+
+    @Query("SELECT * FROM user_table WHERE user = :name ")
+    fun getSpecificUser(name: String): List<FinManDataClass>
 
     @Update
-    suspend fun updateGrocery(item: FinManDataClass)
+    suspend fun updateUser(item: FinManDataClass)
 
     @Delete
-    suspend fun deleteGrocery(item: FinManDataClass)
+    suspend fun deleteUser(item: FinManDataClass)
+
+
 
 }
