@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var viewModel: LoginViewModel
 
     private lateinit var specificUser: List<FinManDataClass>
-
     var userRepository = FinManClass.wordRepositoryGlobal
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -46,8 +46,8 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun btnActionLogin(){
-        val buttonSignUp = Intent(this, HomeActivity::class.java)
-        startActivity(buttonSignUp)
+        val buttonLogin = Intent(this, HomeActivity::class.java)
+        startActivity(buttonLogin)
     }
     private fun btnActionSignUp() {
         val buttonSignUp = Intent(this, SignupActivity::class.java)
@@ -55,8 +55,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun isValidCredentials(){
-        val check  = binding.btnLogin.text.toString()
-        val newScope      = CoroutineScope(Dispatchers.IO).launch{
+        val check  = binding.usernameLogin.text.toString()
+        val newScope = CoroutineScope(Dispatchers.IO).launch{
             specificUser = userRepository.getSpecific(check)
             specificUser.forEach {
                 if (check == it.email) {

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/financialStatusFragment">
+
+    <fragment
+        android:id="@+id/financialStatusFragment"
+        android:name="com.example.finman1.ui.fragments.homefragments.FinancialStatusFragment"
+        android:label="fragment_financial_status"
+        tools:layout="@layout/fragment_financial_status" >
+    </fragment>
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.example.finman1.ui.fragments.homefragments.ReportsFragment"
+        android:label="fragment_reports"
+        tools:layout="@layout/fragment_reports" >
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.finman1.ui.fragments.homefragments.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+    </fragment>
+</navigation>
