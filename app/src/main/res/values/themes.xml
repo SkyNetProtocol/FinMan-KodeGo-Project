@@ -32,4 +32,9 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="Theme.MaterialComponents.NoActionBar" parent="Theme.FinMan1">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

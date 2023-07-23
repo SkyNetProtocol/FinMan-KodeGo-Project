@@ -67,18 +67,13 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-runtime:2.5.2"
-    kapt "androidx.room:room-compiler:2.5.2"
     implementation "androidx.room:room-ktx:2.5.2"
+    kapt "androidx.room:room-compiler:2.5.2"
+//    kapt "android.arch.persistence.room:compiler:1.1.1"
     androidTestImplementation "androidx.room:room-testing:2.5.2"
 
-    // Lifecycle components
-//    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-//    implementation "androidx.lifecycle:lifecycle-common-java8:2.6.1"
-//    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
-
-    // Kotlin components
-//    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2"
-//    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
-
-
+    //lifecycle
+    def lifecycle_extension_version = "2.2.0-beta01"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_extension_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
 }
