@@ -5,6 +5,9 @@ import androidx.room.*
 @Dao
 interface FinManDao {
 
+    @Query("SELECT * FROM user_table WHERE mail = :name ")
+    fun getSpecificWords(name: String): List<FinManDataClass>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addUser(finManDataClass: FinManDataClass)
 
@@ -13,6 +16,8 @@ interface FinManDao {
 
     @Query("SELECT * FROM user_table WHERE mail = :inputMail ")
     fun getUserByMailAndPass(inputMail: String): List<FinManDataClass>
+
+
 
     @Update
     suspend fun updateUser(item: FinManDataClass)

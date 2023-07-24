@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -76,4 +77,17 @@ dependencies {
     def lifecycle_extension_version = "2.2.0-beta01"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_extension_version"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+
+    // Firebase, Firestorm and Analytics
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    // auth
+    implementation 'com.google.firebase:firebase-auth-ktx:22.0.0'
+    // firebase db
+    implementation 'com.google.firebase:firebase-database-ktx:20.2.1'
+    implementation 'com.google.firebase:firebase-storage:20.2.0'
 }

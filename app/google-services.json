@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "160345683711",
+    "project_id": "finman-b9bab",
+    "storage_bucket": "finman-b9bab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160345683711:android:bcae201a20332f77c9beca",
+        "android_client_info": {
+          "package_name": "com.example.finman1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160345683711-kh27uabik4nt9hnomrqnfgk93o0mojlh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhwYGWfUOQX3im4Cmm6NfeRfL7YxdVVrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160345683711-kh27uabik4nt9hnomrqnfgk93o0mojlh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

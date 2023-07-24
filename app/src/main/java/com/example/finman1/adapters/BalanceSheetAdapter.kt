@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finman1.R
-import com.example.finman1.dataclass.AssetsData
 import com.example.finman1.dataclass.BalanceSheetData
 
 class BalanceSheetAdapter (private val balanceSheetList:ArrayList<BalanceSheetData>)

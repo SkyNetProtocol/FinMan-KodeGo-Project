@@ -37,6 +37,4 @@ class LiabilitiesAdapter (private val liabilitiesList:ArrayList<LiabilitiesData>
             onItemClick?.invoke(liabilities)
         }
     }
-
-
 }

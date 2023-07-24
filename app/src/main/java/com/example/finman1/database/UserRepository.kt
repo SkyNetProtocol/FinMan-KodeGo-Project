@@ -18,6 +18,12 @@ class UserRepository(private val userDao:FinManDao) {
         }
     }
 
+    suspend fun getSpecific1(name: String): List<FinManDataClass> {
+        return coroutineScope {
+            userDao.getSpecificWords(name)
+        }
+    }
+
     suspend fun addUserToDatabase(user: FinManDataClass) {
         return coroutineScope {
             userDao.addUser(user)

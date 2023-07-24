@@ -12,6 +12,7 @@ import com.example.finman1.database.FinManDataClass
 import com.example.finman1.ui.home.HomeActivity
 import com.example.finman1.ui.signup.SignupActivity
 import com.example.finman1.databinding.ActivityLoginBinding
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -20,6 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var viewModel: LoginViewModel
+    private var fdb = FirebaseFirestore.getInstance()
 
     private lateinit var specificUser: List<FinManDataClass>
     var userRepository = FinManClass.wordRepositoryGlobal
@@ -35,12 +37,28 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    fun saveToFireStore(){
+        FirebaseFirestore.setLoggingEnabled(true);
+        val sampleUser: MutableMap<String, Any> = HashMap()
+        sampleUser["netWorth"]      = "1Million"
+        sampleUser["reportDate"]      = "July"
+//        sampleUser["image_url"] = url
 
+        fdb.collection("reports")
+            .add(sampleUser)
+            .addOnSuccessListener {
+                Log.e("FIRE", "Success")
+//                apiCall()
+            }
+            .addOnFailureListener { Log.e("FIRE", "Failed > " + it.toString()) }
+
+    }
 
 
     private fun buttonAction(){
-        binding.btnLogin.setOnClickListener { btnActionLogin() }
+        binding.btnLogin.setOnClickListener { isValidCredentials() }
         binding.btnSignUp.setOnClickListener { btnActionSignUp() }
+//        binding.btnSignUp.setOnClickListener { saveToFireStore()}
     }
 
 
@@ -57,7 +75,10 @@ class LoginActivity : AppCompatActivity() {
     private fun isValidCredentials(){
         val check  = binding.usernameLogin.text.toString()
         val newScope = CoroutineScope(Dispatchers.IO).launch{
-            specificUser = userRepository.getSpecific(check)
+//            specificUser = userRepository.getSpecific(check)
+            specificUser = userRepository.getSpecific1(check)
+            Log.e("DB","___ success ___${specificUser.toString()}")
+
             specificUser.forEach {
                 if (check == it.email) {
                     val buttonLogin = Intent(this@LoginActivity, HomeActivity::class.java)
