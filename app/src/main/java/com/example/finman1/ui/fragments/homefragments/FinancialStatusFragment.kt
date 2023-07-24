@@ -44,14 +44,13 @@ class FinancialStatusFragment : Fragment() {
                 binding.tabLayout.selectTab(binding.tabLayout.getTabAt(position))
             }
         })
-
-
         return binding.root
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
+
 
     }
 
