@@ -6,15 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.financialfragments.AssetsFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewAsset"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/assetsOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Assets"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="100dp"
+        android:layout_marginBottom="30dp"
+        android:text="Add Assets"
         android:textSize="40sp" />
-
 
 
 </FrameLayout>

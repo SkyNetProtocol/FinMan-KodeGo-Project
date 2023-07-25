@@ -1,5 +1,7 @@
 package com.example.finman1.database
 
+import com.example.finman1.database.relations.AssetsTable
+import com.example.finman1.dataclass.AssetsData
 import kotlinx.coroutines.coroutineScope
 
 class UserRepository(private val userDao:FinManDao) {
@@ -30,5 +32,16 @@ class UserRepository(private val userDao:FinManDao) {
         }
     }
 
+    suspend fun addAssetToAssetTable(user: AssetsTable) {
+        return coroutineScope {
+            userDao.addAssetDao(user)
+        }
+    }
+
+    suspend fun getAssets() : List<AssetsTable> {
+        return coroutineScope {
+            userDao.getAllUser()
+        }
+    }
 
 }

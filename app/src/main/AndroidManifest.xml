@@ -25,6 +25,9 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
+        <activity android:name=".ui.addactivity.AddAssetsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
         <activity
             android:name=".ui.loadingscreen.MainActivity"
             android:exported="true"
