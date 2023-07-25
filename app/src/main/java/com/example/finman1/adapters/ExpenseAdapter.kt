@@ -18,22 +18,30 @@ class ExpenseAdapter (private val expenseList:ArrayList<ExpenseData>)
     class ExpenseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val textViewExpense1: TextView = itemView.findViewById(R.id.recyclerText)
         val textViewExpense2: TextView = itemView.findViewById(R.id.recyclerText2)
-        val expenseSample: ConstraintLayout = itemView.findViewById(R.id.layoutBox)
+        val textViewExpense3: TextView = itemView.findViewById(R.id.recyclerText3)
+        val textViewExpense4: TextView = itemView.findViewById(R.id.recyclerText4)
+        val expenseSample: ConstraintLayout = itemView.findViewById(R.id.layoutBoxAsset)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExpenseViewHolder {
-        val viewExpense = LayoutInflater.from(parent.context).inflate(R.layout.layout_box, parent, false)
+        val viewExpense = LayoutInflater.from(parent.context).inflate(R.layout.layout_box_asset, parent, false)
         return ExpenseViewHolder(viewExpense)
     }
 
-    override fun getItemCount(): Int {
-        return expenseList.size
+    override fun getItemCount() = expenseList.size
+    fun setAssetData(data: List<ExpenseData>){
+        expenseList.apply {
+            clear()
+            addAll(data)
+        }
     }
 
     override fun onBindViewHolder(holder: ExpenseViewHolder, position: Int) {
         val expense = expenseList[position]
         holder.textViewExpense1.text = expense.expense1
         holder.textViewExpense2.text = expense.expense2
+        holder.textViewExpense3.text = expense.expense3
+        holder.textViewExpense4.text = expense.expense4
         holder.expenseSample.setOnClickListener {
             onItemClick?.invoke(expense)
         }

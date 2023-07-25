@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightGray"
+    android:background="@color/sun_3"
     tools:context=".ui.signup.SignupActivity">
 
     <FrameLayout
@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/gradient_one"/>
+        android:background="@color/sun"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/SignUpPassword"
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@color/option3_1"
+        android:background="@color/sun"
         android:text="@string/register"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
         android:id="@+id/alreadyHadAnAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/option3_1"
+        android:background="@color/sun"
         android:text="@string/already_had_an_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

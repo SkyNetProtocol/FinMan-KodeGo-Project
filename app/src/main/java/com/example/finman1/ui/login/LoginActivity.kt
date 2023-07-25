@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun saveToFireStore(){
+    fun saveToFireStore1(){
         FirebaseFirestore.setLoggingEnabled(true);
         val sampleUser: MutableMap<String, Any> = HashMap()
         sampleUser["netWorth"]      = "1Million"
@@ -56,7 +56,7 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun buttonAction(){
-        binding.btnLogin.setOnClickListener { isValidCredentials() }
+        binding.btnLogin.setOnClickListener { btnActionLogin() }
         binding.btnSignUp.setOnClickListener { btnActionSignUp() }
 //        binding.btnSignUp.setOnClickListener { saveToFireStore()}
     }

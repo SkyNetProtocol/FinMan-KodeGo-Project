@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinMan1"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.addactivity.AddExpenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.addactivity.AddIncomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.addactivity.AddLiabilityActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.signup.SignupActivity"
             android:exported="false"
@@ -25,9 +33,10 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.MaterialComponents.NoActionBar" />
-        <activity android:name=".ui.addactivity.AddAssetsActivity"
+        <activity
+            android:name=".ui.addactivity.AddAssetsActivity"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.NoActionBar" />
         <activity
             android:name=".ui.loadingscreen.MainActivity"
             android:exported="true"

@@ -1,5 +1,6 @@
 package com.example.finman1.ui.addactivity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,8 @@ import com.example.finman1.application.FinManClass
 import com.example.finman1.database.FinManDataClass
 import com.example.finman1.database.relations.AssetsTable
 import com.example.finman1.databinding.ActivityAddAssetsBinding
+import com.example.finman1.ui.fragments.financialfragments.AssetsFragment
+import com.example.finman1.ui.fragments.financialfragments.LiabilitiesFragments
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -28,7 +31,7 @@ class AddAssetsActivity : AppCompatActivity() {
     }
     private fun attachActionsAsset(){
         binding.btnAddAsset.setOnClickListener { addAsset() }
-
+        binding.btnBackToAssetFragment.setOnClickListener { backToAssetFragment() }
     }
 
 
@@ -47,6 +50,9 @@ class AddAssetsActivity : AppCompatActivity() {
 
     }
 
-
+    private fun backToAssetFragment(){
+        val backToAsset = Intent(this,AssetsFragment::class.java)
+        startActivity(backToAsset)
+    }
 
 }

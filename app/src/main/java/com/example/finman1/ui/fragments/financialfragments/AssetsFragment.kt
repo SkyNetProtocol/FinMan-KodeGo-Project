@@ -18,6 +18,7 @@ import com.example.finman1.database.relations.AssetsTable
 import com.example.finman1.databinding.FragmentAssetsBinding
 import com.example.finman1.dataclass.AssetsData
 import com.example.finman1.ui.addactivity.AddAssetsActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import io.realm.kotlin.internal.platform.threadId
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,9 +30,8 @@ class AssetsFragment : Fragment() {
     private var _binding : FragmentAssetsBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var allWordsData: List<AssetsTable>
-
     private lateinit var specificAsset: List<AssetsTable>
+    private var fdb = FirebaseFirestore.getInstance()
 
     var assetRepository = FinManClass.wordRepositoryGlobal
     override fun onCreateView(
@@ -49,13 +49,17 @@ class AssetsFragment : Fragment() {
         binding.assetsOne.setOnClickListener {
             val intentAddAsset = Intent(this.activity, AddAssetsActivity::class.java)
             startActivity(intentAddAsset)
-
         }
+
+        binding.sync.setOnClickListener {
+            saveToFireStoreAsset()
+        }
+
     }
     override fun onResume() {
         super.onResume()
 //        val newScope = CoroutineScope(Dispatchers.IO).launch {
-        val newScope = CoroutineScope(Dispatchers.IO).launch {
+        val newScopeAsset = CoroutineScope(Dispatchers.IO).launch {
 //           specificUser = userRepository.getSpecific(check)
             specificAsset = assetRepository.getAssets()
             Log.e("DB", "___ success ___$specificAsset")
@@ -80,29 +84,22 @@ class AssetsFragment : Fragment() {
             }
         }
     }
-//        lifecycleScope.launch {
-//           val assetListMain = UserDatabase(mContext).userDao().getAllUser()
-//            binding.recyclerViewAsset.apply {
-//                layoutManager = LinearLayoutManager(this@AssetsFragment)
-//                adapter = AssetsAdapter().apply {
-//                    setAssetData(assetListMain)
-//                }
-//            }
-//        }
-//                    withContext(Dispatchers.Main){
-//                            quotesAdapter.updateList(bod.results)
-//                            updatePage(bod.totalPages)
-//                            binding.tvPage.text = bod.page.toString()
-//                    }
 
-//    private fun getItems(){
-//        val newScope1 = CoroutineScope(Dispatchers.IO).launch{
-//            allWordsData = assetRepository.getAssets()
-//            Log.e("DB","<<words>>")
-//            allWordsData.forEach {
-//                Log.e("DB",it.assetType.toString() +" "+ it.id)
-//            }
-//        }
-//    }
+    fun saveToFireStoreAsset(){
+        FirebaseFirestore.setLoggingEnabled(true);
+        val sampleUser: MutableMap<String, Any> = HashMap()
+        sampleUser["netWorth"]      = specificAsset
+        sampleUser["reportDate"]    = "July"
+//        sampleUser["image_url"] = url
+
+        fdb.collection("reports")
+            .add(sampleUser)
+            .addOnSuccessListener {
+                Log.e("FIRE", "Success")
+//                apiCall()
+            }
+            .addOnFailureListener { Log.e("FIRE", "Failed > " + it.toString()) }
+
+    }
 
 }

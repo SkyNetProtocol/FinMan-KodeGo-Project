@@ -14,6 +14,7 @@
     <color name="darkNavyBlue">#004466</color>
     <color name="lightGray">#D3D3D3</color>
 
+    <color name="sun4">#FFD700</color>
 
     <color name="primaryContainer_90">#ccffff</color>
     <color name="primaryContainer_50">#00ffff</color>
@@ -30,7 +31,7 @@
     <color name="sun">#ff944d</color>
     <color name="sun_2">#ffb366</color>
 
-    <color name="sample">#FFD499</color>
+    <color name="sun_3">#FFD499</color>
     <color name="sample2">#007A7A</color>
 
     <color name="option1_1">#FFD8B5</color>
