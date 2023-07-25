@@ -15,12 +15,27 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/incomeOne"
+        android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="150dp"
         android:layout_marginBottom="30dp"
+        android:background="@drawable/boarder_box"
         android:text="Add Income"
-        android:textSize="40sp" />
+        android:textSize="20sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sync2"
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="125dp"
+        android:layout_marginBottom="85dp"
+        android:background="@drawable/boarder_box"
+        android:text="Sync to FireStore"
+        android:textSize="20sp" />
+
 
 </FrameLayout>

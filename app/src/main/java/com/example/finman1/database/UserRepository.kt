@@ -29,6 +29,15 @@ class UserRepository(private val userDao:FinManDao) {
         }
     }
 
+    suspend fun getSpecificMailAndPass(name: String, name2:String): List<FinManDataClass> {
+        return coroutineScope {
+            userDao.getSpecificAccount(name,name2)
+        }
+    }
+
+
+
+
     suspend fun addUserToDatabase(user: FinManDataClass) {
         return coroutineScope {
             userDao.addUser(user)

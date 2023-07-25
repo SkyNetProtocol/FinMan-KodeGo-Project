@@ -12,6 +12,9 @@ interface FinManDao {
     @Query("SELECT * FROM user_table WHERE mail = :name ")
     fun getSpecificWords(name: String): List<FinManDataClass>
 
+    @Query("SELECT * FROM user_table WHERE mail = :name AND pass = :inputPassword ")
+    fun getSpecificAccount(name: String, inputPassword:String): List<FinManDataClass>
+
     @Query("SELECT * FROM assets_table WHERE quantity = :name ")
     fun getSpecificAsset(name: String): List<AssetsTable>
 

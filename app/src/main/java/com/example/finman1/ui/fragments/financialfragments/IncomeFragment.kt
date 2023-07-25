@@ -16,6 +16,7 @@ import com.example.finman1.databinding.FragmentIncomeBinding
 import com.example.finman1.dataclass.AssetsData
 import com.example.finman1.dataclass.IncomeData
 import com.example.finman1.ui.addactivity.AddIncomeActivity
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,6 +28,7 @@ class IncomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var specificIncome: List<IncomeTable>
+    private var fdbIncome = FirebaseFirestore.getInstance()
 
     var incomeRepository = FinManClass.wordRepositoryGlobal
     override fun onCreateView(
@@ -44,7 +46,10 @@ class IncomeFragment : Fragment() {
         binding.incomeOne.setOnClickListener {
             val intentAddIncome = Intent(this.activity, AddIncomeActivity::class.java)
             startActivity(intentAddIncome)
+        }
 
+        binding.sync2.setOnClickListener {
+            saveToFireStoreIncome()
         }
     }
     override fun onResume() {
@@ -74,6 +79,23 @@ class IncomeFragment : Fragment() {
 //                    setAssetData(assetList)
             }
         }
+    }
+
+    fun saveToFireStoreIncome(){
+        FirebaseFirestore.setLoggingEnabled(true);
+        val sampleUser: MutableMap<String, Any> = HashMap()
+        sampleUser["Income"]      = specificIncome
+//        sampleUser["reportDate"]    = "July"
+//        sampleUser["image_url"] = url
+
+        fdbIncome.collection("reports2")
+            .add(sampleUser)
+            .addOnSuccessListener {
+                Log.e("FIRE", "Success")
+//                apiCall()
+            }
+            .addOnFailureListener { Log.e("FIRE", "Failed > " + it.toString()) }
+
     }
 
 }

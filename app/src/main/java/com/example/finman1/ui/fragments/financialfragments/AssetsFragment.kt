@@ -88,11 +88,10 @@ class AssetsFragment : Fragment() {
     fun saveToFireStoreAsset(){
         FirebaseFirestore.setLoggingEnabled(true);
         val sampleUser: MutableMap<String, Any> = HashMap()
-        sampleUser["netWorth"]      = specificAsset
-        sampleUser["reportDate"]    = "July"
+        sampleUser["assets"]      = specificAsset
 //        sampleUser["image_url"] = url
 
-        fdb.collection("reports")
+        fdb.collection("assetReports")
             .add(sampleUser)
             .addOnSuccessListener {
                 Log.e("FIRE", "Success")
