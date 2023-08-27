@@ -59,7 +59,8 @@ class AssetsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 //        val newScope = CoroutineScope(Dispatchers.IO).launch {
-        val newScopeAsset = CoroutineScope(Dispatchers.IO).launch {
+//        val newScopeAsset = CoroutineScope(Dispatchers.IO).launch {
+            CoroutineScope(Dispatchers.IO).launch {
 //           specificUser = userRepository.getSpecific(check)
             specificAsset = assetRepository.getAssets()
             Log.e("DB", "___ success ___$specificAsset")

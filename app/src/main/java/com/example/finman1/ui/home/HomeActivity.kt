@@ -21,7 +21,6 @@ class HomeActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.fragmentContainerView2)
         NavigationUI.setupWithNavController(binding.bottomNavigationView, navController)
-
     }
 
     fun saveToFireStore(name: String, role : String, url: String){

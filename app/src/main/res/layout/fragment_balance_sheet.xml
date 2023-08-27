@@ -7,7 +7,7 @@
     android:background="@color/sun_3">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/assetsOne"
+        android:id="@+id/balanceSheetOne"
         android:padding="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
